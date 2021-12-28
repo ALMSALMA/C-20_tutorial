@@ -1,0 +1,30 @@
+// ----------------- integers ----------------- //
+
+int number = 15;	// decimal
+int number = 015;	// octal
+int number = 0x15;	// hex
+int number = 0b0000001;	// binary (work for c++14 - c++20)
+
+int example {10};	// Braced initialization
+int example (10);	// Functional initialization
+int example = 10;	// Assignment initialization
+
+
+// ----------------- Fractions ----------------- //
+
+float  	    handles 7 digits	// we need to make this into considerations
+double      handles 15 digitis	// otherwise the numbers we use will be wrong
+long double handles 15> digits
+
+We need to add suffixes: f for float and l for Long double
+float number 	    {1.92545654f}
+long  double number {1.925655421L}
+
+double number {1.925e7}	// We can use scientific notation
+
+
+// ----------------- Auto ----------------- //
+
+Auto automatically detects the datatype of the given variable
+
+It's very important to do assignments carefully bcz we cannot initialize it as unsigned int and then give it a negative value
