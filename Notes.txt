@@ -28,3 +28,66 @@ double number {1.925e7}	// We can use scientific notation
 Auto automatically detects the datatype of the given variable
 
 It's very important to do assignments carefully bcz we cannot initialize it as unsigned int and then give it a negative value
+
+
+// ----------------- Precedence and Associativity ----------------- //
+
+https://en.cppreference.com/w/cpp/language/operator_precedence
+
+
+// ----------------- Prefix and Postfix ----------------- //
+
+value++ : does the command then add 1 
+++value : add 1 then does the command
+
+
+// ----------------- Relational Operators ----------------- //
+
+Put comparisons in brackets to avoid compiling error. ex: (no1 > no2)
+
+
+// ----------------- Output Formating ----------------- //
+
+https://en.cppreference.com/w/cpp/io/manip
+
+#include <iomanip>
+std::flush 		: flushes the output buffer to its final destination. 
+std::setw(<number>) 	: Adjusts the field with for the item about to be printed. 
+std::setfill('*') 	: Fill the rest of " " with "*"
+std::showpoint		: show trailing zeros if necessary
+
+std::boolalpha / std::noboolalpha : control bool output format 1/0 or true/false
+std::showpos / std::noshowpos	  : show or hide the +  sign for positive numbers
+std::dec / std::hex / std::oct    : different number systems 
+std::uppercase / std::nouppercase : uppercase and nouppercase
+std::scientific / std::fixed 	  : fixed and scientific for floating point values
+std::cout.unsetf(std::ios::scientific | std::ios::fixed); // Hack
+std::setprecision(<number>)	  :  the number of digits printed out for a floating point.
+
+std::right / std::left / std::internal : justification left, right, and internal.
+
+
+// ----------------- Numeric Limits ----------------- //
+
+#include <limmits>
+
+std::numeric_limits<int>::min()
+std::numeric_limits<signed short>::max()
+std::numeric_limits<long double>::lowest()
+
+// ----------------- Math Operations ----------------- //
+
+https://en.cppreference.com/w/cpp/header/cmath
+
+#include <cmath>
+
+std::floor(value)
+std::ceil(value)
+std::exp(value)
+std::abs(value)
+std::pow(value)
+std::log(value)
+std::log10(value)
+std::sqrt(value)
+std::round(value)
+
