@@ -91,3 +91,64 @@ std::log10(value)
 std::sqrt(value)
 std::round(value)
 
+
+// ----------------- Constants ----------------- //
+
+constexpr int name{val}; 	// used to evalute consts at compile time so it is not recomputed at every runtime process (saves the values as binary in the exe file)
+
+static_assert(name == value)	// used to check the values of const values assigned at compiling time
+
+constinit : - we can use it to initialize runtime variables at compile time so we don't get error while assigning the global variables
+	    - it doesn't imply that the variable assigned after it is const
+	    - it can be combined with const and it cannot be used inside main function
+	    - it can't be used with constexpr
+
+
+// ----------------- Data Conversion----------------- //
+
+static_cast<datatype_we_want_to_convert_to>(variable_we_want_to_change)
+
+overflow: - when you assign a value bigger than the variable can handle (e.g: char val = 300; but char can handle to 255 only)
+	  - in this case the value stored will be reset e.g: to 0
+
+underflow: - when you assign a value smaller than the variable can handle (e.g: char val = -1 but char can handle between 0-255 only)
+	   - in this case the value stored will be reset to the biggest value e.g: to 255
+
+
+// ----------------- Bitwise Operators ----------------- //
+
+(>>) shifting right divides by 2^n
+(<<) shifting left multiplies by 2^n
+this rule breaks if you throw 1'either to the right or the left
+
+(^)  XOR operator
+
+
+// ----------------- Masks ----------------- //
+
+set bit operation: 		value |= mask
+reset bit operation:	value &= ~(mask)
+check bit operation:	(value & mask) >> bit_no
+toggle bit operation:	value =^ mask
+
+
+// ----------------- Variable Lifetime----------------- //
+
+Storage duration: 	- local (block, automatic): killed at the end of the block
+			- static: killed at the end of the program
+			- dynamic: kill time is defined by user
+
+
+// ----------------- Conditional Statements ----------------- //
+
+variables initialized inside "if" just work inside it and it cannot be used anywhere else even in else part
+
+switch: - can only be int or enum
+	- it is one scope: variable declared in case 0 can be used in case 10 BUT we cannot use variable before defining it
+	- initializing variables declared in cases will give compile error (except of default case) so it isn't recommended to initialize variables in cases
+	- {} changes the scopes of cases and variables declared here will not be known by the rest of the cases (SEE /6_ Flow Control/6_SwitchScope for more details)	
+ 
+Ternary operator: result = (condition)? a : b;
+we can initialize variables with ternary e.g: bool init_with_ternary { (b > a)? true : false };
+
+if/switch with initializer: it defines a variable to be known just inside the if statement
